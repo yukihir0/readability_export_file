@@ -1,29 +1,38 @@
 # ReadabilityExportFile
 
-TODO: Write a gem description
+'readability_export_file' provides feature for parsing export file of 'Readability'.
 
-## Installation
+## Requirements
+
+- ruby 1.9
 
 Add this line to your application's Gemfile:
 
-    gem 'readability_export_file'
+```
+gem 'readability_export_file', :github => 'yukihir0/readability_export_file'
+```
 
 And then execute:
 
-    $ bundle
+```
+% bundle install
+```
 
-Or install it yourself as:
+## How to use
 
-    $ gem install readability_export_file
+```
+path = 'path/to/export_file'
+file = ReadabilityExportFile.new(path)
 
-## Usage
+items = file.get_items
 
-TODO: Write usage instructions here
+items.each { |item|
+    puts item.article_title
+}
+```
 
-## Contributing
+For more information, please see [here](https://github.com/yukihir0/readability_export_file/blob/master/sample/main.rb).
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## License
+
+Copyright &copy; 2013 yukihir0

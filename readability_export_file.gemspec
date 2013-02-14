@@ -8,12 +8,15 @@ Gem::Specification.new do |gem|
   gem.version       = ReadabilityExportFile::VERSION
   gem.authors       = ["yukihir0"]
   gem.email         = ["yukihiro.cotori@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{'readability_export_file' provides feature for parsing export file of 'Readability'.}
+  gem.summary       = %q{'readability_export_file' provides feature for parsing export file of 'Readability'.}
+  gem.homepage      = "https://github.com/yukihir0/readability_export_file"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_dependency 'json'
+  gem.add_development_dependency 'rspec'
 end
