@@ -5,6 +5,7 @@
 ## Requirements
 
 - ruby 1.9
+- json
 
 Add this line to your application's Gemfile:
 
