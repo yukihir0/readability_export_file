@@ -1,3 +1,3 @@
-class ReadabilityExportFile
-  VERSION = "0.0.1"
+module ReadabilityExportFile
+  VERSION = "0.0.2"
 end

@@ -22,11 +22,9 @@ And then execute:
 
 ```
 path = 'path/to/export_file'
-file = ReadabilityExportFile.new(path)
+item_list = ReadabilityExportFile.parse(path)
 
-items = file.get_items
-
-items.each { |item|
+item_list.each { |item|
     puts item.article_title
 }
 ```

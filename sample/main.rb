@@ -18,9 +18,8 @@ end
 
 
 path = 'data/test.json'
-file = ReadabilityExportFile.new(path)
+item_list = ReadabilityExportFile.parse(path)
 
-list = file.get_items
-list.each { |item|
+item_list.each { |item|
     print(item)
 }

@@ -2,56 +2,32 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe ReadabilityExportFile do
-    context 'uninitialized' do
-        describe '#initialize' do
+    context 'init' do
+        describe '#parse' do
             context 'when nil file path input' do
                 it 'raise error' do
-                    expect { ReadabilityExportFile.new(nil)
-                    }.to raise_error(RuntimeError, ReadabilityExportFile::INVALID_FILE_PATH_ERROR)
+                    expect { ReadabilityExportFile.send(:parse, nil)
+                    }.to raise_error(RuntimeError, ReadabilityExportFile::NIL_FILE_PATH_ERROR)
                 end
             end
 
-            context 'when null string file path input' do
-                it 'raise error ' do
-                    expect { ReadabilityExportFile.new('')
-                    }.to raise_error(RuntimeError, ReadabilityExportFile::INVALID_FILE_PATH_ERROR)
+            context 'when empty file path input' do
+                it 'raise error' do
+                    expect { ReadabilityExportFile.send(:parse, '')
+                    }.to raise_error(RuntimeError, ReadabilityExportFile::NIL_FILE_PATH_ERROR)
                 end
             end
 
             context 'when not exist file path input' do
                 it 'raise error' do
-                    expect { ReadabilityExportFile.new('spec/data/not_exist_file')
+                    expect { ReadabilityExportFile.send(:parse, 'spec/data/not_exist_file')
                     }.to raise_error(RuntimeError, ReadabilityExportFile::NOT_EXISTS_FILE_ERROR)
                 end
             end
 
-            context 'when valid path input' do
-                it 'not raise error' do
-                    expect { ReadabilityExportFile.new('spec/data/test.json')
-                    }.to_not raise_error
-                end
-            end
-        end
-    end
-
-    context 'initialized' do
-        before(:each) do
-            @file = ReadabilityExportFile.new('spec/data/test.json')
-        end 
-
-        describe '#get_items' do
-            context 'when call' do
-                it '3 items' do
-                    items = @file.get_items
-                    items.length.should == 3
-                end
-            end
-        end
-
-        describe '#parse' do
-            context 'when json input' do
+            context 'when file path input' do
                 it 'parse item' do
-                    item_list = @file.send(:parse, 'spec/data/test.json')
+                    item_list = ReadabilityExportFile.send(:parse, 'spec/data/test.json')
 
                     item_list.length.should == 3
 
