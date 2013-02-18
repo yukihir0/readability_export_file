@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'readability_export_file/version'
+require 'readability_export_file/entity/readability_item'
 require 'json'
-require 'entity/readability_item'
 
 module ReadabilityExportFile
     NIL_FILE_PATH_ERROR   = 'nil or empty file path ins inputted'
