@@ -1,4 +1,4 @@
-# ReadabilityExportFile [![Build Status](https://travis-ci.org/yukihir0/readability_export_file.png?branch=master)](https://travis-ci.org/yukihir0/readability_export_file)
+# ReadabilityExportFile [![Build Status](https://travis-ci.org/yukihir0/readability_export_file.png?branch=master)](https://travis-ci.org/yukihir0/readability_export_file) [![Coverage Status](https://coveralls.io/repos/yukihir0/readability_export_file/badge.svg?branch=master&service=github)](https://coveralls.io/github/yukihir0/readability_export_file?branch=master)
 
 'readability_export_file' provides feature for parsing export file of 'Readability'.
 
